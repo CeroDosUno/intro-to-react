@@ -5,6 +5,7 @@
 
 * [React](nuull) - The web framework used
 * [Create React App](https://github.com/facebook/create-react-app).
+* [Faker](https://github.com/marak/Faker.js/) -  generate massive amounts of fake data
 
 ## Authors
 
