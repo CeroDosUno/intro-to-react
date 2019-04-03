@@ -1,5 +1,6 @@
 # Project 2 - Making Components
 
+Understanding of props and how to pass them between parent and child components.
 
 ## Built With
 
