@@ -4,7 +4,14 @@ import ReactDOM from 'react-dom';
 
 //create component
 const App = function(){
-  return <div> HI there </div>;
+  return (
+  <div>
+    <label class="label" for="name">Enter name </label>
+    <input id="name" type="text" />
+    <button> Submit</button>
+    <h1> hello</h1>
+  </div>
+);
 };
 
 //rendering component at div tag called root
