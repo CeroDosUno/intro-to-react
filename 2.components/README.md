@@ -1,4 +1,4 @@
-# Project 1 - Getting Started
+# Project 2 - Making Components
 
 
 ## Built With
