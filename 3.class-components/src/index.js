@@ -10,20 +10,22 @@ class App extends React.Component{
     super(props);
     //ONLY ACCEPTABLE TIME
     this.state={lat:null, errorMessage: ''};
-
-    window.navigator.geolocation.getCurrentPosition(
-    //position returns if geolocation is obtained
-    //error is returned if not able to.
-      (position) => {
-        //this runs asynchronously,
-        //will run once lat is obtained.
-        this.setState({lat: position.coords.latitude});
-      },
-      (err) => {
-        this.setState({errorMessage:err.message});
-      }
-    );
   }
+
+componentDidMount(){
+  window.navigator.geolocation.getCurrentPosition(
+    (position) => this.setState({lat: position.coords.latitude}),
+    (err) => this.setState({errorMessage:err.message})
+  );
+}
+
+componentDidUpdate(){
+  console.log("did update");
+}
+
+componentWillUnmount(){
+  console.log("will mount");
+}
 
   render() {
     if(this.state.errorMessage && !this.state.lat){
