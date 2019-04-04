@@ -18,7 +18,7 @@ class App extends React.Component{
     if(this.state.errorMessage && !this.state.lat){
       return (
         <div>
-        <Spinner message= {this.state.errorMessage}/>   
+        <Spinner message= {this.state.errorMessage}/>
         </div>
     );
     } else if(this.state.lat&& !this.state.errorMessage){
