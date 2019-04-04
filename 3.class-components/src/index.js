@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import SeasonDisplay from './SeasonDisplay';
+import Spinner from './Spinner';
 
 //class based component
 class App extends React.Component{
@@ -13,13 +14,13 @@ componentDidMount(){
   );
 }
 
-componentDidUpdate(){
-  console.log("did update");
-}
-
-componentWillUnmount(){
-  console.log("will mount");
-}
+// componentDidUpdate(){
+//   console.log("did update");
+// }
+//
+// componentWillUnmount(){
+//   console.log("will mount");
+// }
 
   render() {
     if(this.state.errorMessage && !this.state.lat){
@@ -33,7 +34,7 @@ componentWillUnmount(){
       </div>
     );
     }else{
-    return <div> loading ... </div>;
+    return <div> <Spinner /></div>;
     }
 
 
