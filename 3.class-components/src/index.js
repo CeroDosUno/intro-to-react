@@ -7,26 +7,19 @@ import Spinner from './Spinner';
 class App extends React.Component{
   state = {lat:null,errorMessage:''};
 
-componentDidMount(){
+  componentDidMount(){
   window.navigator.geolocation.getCurrentPosition(
     (position) => this.setState({lat: position.coords.latitude}),
     (err) => this.setState({errorMessage:err.message})
   );
 }
 
-// componentDidUpdate(){
-//   console.log("did update");
-// }
-//
-// componentWillUnmount(){
-//   console.log("will mount");
-// }
-
-  render() {
+  renderContent(){
     if(this.state.errorMessage && !this.state.lat){
-      return (<div>
-      Error:{this.state.errorMessage}
-      </div>
+      return (
+        <div>
+        <Spinner message= {this.state.errorMessage}/>   
+        </div>
     );
     } else if(this.state.lat&& !this.state.errorMessage){
       return (<div>
@@ -34,14 +27,16 @@ componentDidMount(){
       </div>
     );
     }else{
-    return <div> <Spinner /></div>;
+    return <div> <Spinner message="Please accept location request." /></div>;
     }
+  }
 
-
-    // return <div>
-    // Latitude: {this.state.lat} <br/>
-    // Error:{this.state.errorMessage}
-    // </div>;
+  render() {
+    return (
+      <div className="border red">
+        {this.renderContent()}
+        </div>
+      );
   }
 }
 
