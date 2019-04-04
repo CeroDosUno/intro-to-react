@@ -3,8 +3,8 @@
 In this project, we will handle user input and events throughout the application process flow.
 It will search images based on a users input and dispaly them afterwards.
 
-![Design](https://github.com/CeroDosUno/intro-to-react/blob/master/4.handling-user-input/design.png)
-![Demo](https://github.com/CeroDosUno/intro-to-react/blob/master/4.handling-user-input/demo.gif)
+![Design](https://github.com/CeroDosUno/intro-to-react/blob/master/4.pics/design.png)
+![Demo](https://github.com/CeroDosUno/intro-to-react/blob/master/4.pics/demo.gif)
 ## Built With
 
 * [React](nuull) - The web framework used
