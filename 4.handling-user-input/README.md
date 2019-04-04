@@ -3,7 +3,7 @@
 In this project, we will handle user input and events throughout the application process flow.
 It will search images based on a users input and dispaly them afterwards.
 
-![alt text](https://github.com/CeroDosUno/personalBlog/blob/master/Webview.png)
+![alt text](https://github.com/CeroDosUno/intro-to-react/blob/master/4.handling-user-input/design.png)
 
 ## Built With
 
