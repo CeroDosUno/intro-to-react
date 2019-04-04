@@ -3,10 +3,16 @@
 In this project, we will handle user input and events throughout the application process flow.
 It will search images based on a users input and dispaly them afterwards.
 
+![alt text](https://github.com/CeroDosUno/personalBlog/blob/master/Webview.png)
+
 ## Built With
 
 * [React](nuull) - The web framework used
 * [Create React App](https://github.com/facebook/create-react-app).
+* [Unsplash](https://unsplash.com)
+* [Axios](null)
+* [dotenv](null)
+
 
 ## Authors
 
