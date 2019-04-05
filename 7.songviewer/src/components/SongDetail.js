@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 const SongDetail = ({song}) =>{
-  // console.log(props);
+  // console.log(props.song);
   if(!song){
     return (
       <div>
