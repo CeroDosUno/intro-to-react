@@ -24,7 +24,7 @@ const createClaim=(name,amount)=>{
 const deletePolicy = (name) =>{
   return {
     type:'DELETE_POLICY',
-    payload{
+    payload: {
       name
     }
   };
@@ -42,7 +42,7 @@ const claimsHistory = (oldListOfClaims = [], action) =>{
 };
 
 //Accounting
-const accounting = (bagOfMoney = 100, action) =>{
+const accounting = (bagOfMoney = 0, action) =>{
   if(action.type === 'CREATE_CLAIM'){
     return bagOfMoney- action.payload.amount;
   } else if(action.type==='CREATE_POLICY'){
@@ -63,4 +63,28 @@ const policies= (listOfPolicies=[], action) =>{
   }
 
   return listOfPolicies;
+
 };
+
+const {createStore,combineReducers} = Redux;
+
+//merging all reducers
+const ourDepartments = combineReducers({
+  accounting: accounting,
+  claimsHistory: claimsHistory,
+  policies:policies
+});
+
+
+//creating the store
+const store = createStore(ourDepartments);
+
+store.dispatch(createPolicy('Diana',300));
+store.dispatch(createPolicy('Bob',300));
+store.dispatch(createPolicy('Linda',300));
+
+store.dispatch(createClaim('Linda',200));
+store.dispatch(createClaim('Bob',20));
+
+store.dispatch(deletePolicy('Bob'));
+console.log(store.getState());
