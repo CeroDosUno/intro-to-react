@@ -16,6 +16,7 @@ We will render list of blog posts from the outside.
 * [Redux](null) - redux library
 * [React-redux](null) - integration layer
 * [redux-thunk](null) - middleware to help make requests in a redux applications
+* [Lodash](null)
 
 
 ## Authors

@@ -1,4 +1,6 @@
 import jsonPlaceholder from '../apis/jsonPlaceholder';
+import _ from 'lodash';
+
 //DOTHIS
 //all this does is defining a function that returns a function
 export const fetchPosts = () =>   async (dispatch) => {
@@ -10,27 +12,15 @@ export const fetchPosts = () =>   async (dispatch) => {
     })
 };
 
-export const fetchUser = (id) => async (dispatch) =>{
+export const fetchUser = id => dispatch => _fetchUser(id,dispatch);
+//privatefunction
+const _fetchUser = _.memoize(async (id,dispatch) =>{
   const response = await jsonPlaceholder.get(`/users/${id}`);
 
   dispatch({
     type: 'FETCH_USER',
     payload: response.data
-  })
-};
+  });
+});
 
-
-
-/*
-//CANNOTDOTHIS
-//middleware is needed to make the API call
-export const fetchPosts = async () => {
-  const response = await jsonPlaceholder.get('/posts');
-
-  return {
-      type: 'FETCH_POSTS',
-      payload: response
-  };
-};
-
-*/
+//
