@@ -1,4 +1,4 @@
-export default (state=[], action) => {
+export default (state = [], action) => {
 
 //always use switch statements to handle the action
   switch(action.type){
