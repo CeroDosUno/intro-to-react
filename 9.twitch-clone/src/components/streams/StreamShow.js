@@ -9,4 +9,3 @@ const StreamShow = () =>{
 }
 
 export default StreamShow;
-StreamShow
