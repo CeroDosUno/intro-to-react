@@ -14,14 +14,19 @@ export const fetchPostsAndUsers = () => async (dispatch,getState) =>{
   // console.log(getState().posts);
 
   //go through each post and pull userId
-  const userIds = _.uniq(_.map(getState().posts,'userId'));
+  // const userIds = _.uniq(_.map(getState().posts,'userId'));
+  // 
+  //
+  // userIds.forEach( id => dispatch(fetchUser(id)));
 
+  //chain on functions that manipulate data
+  //.value is used to finally run all of them
+  _.chain(getState().posts)
+    .map('userId')
+      .uniq()
+        .forEach(id => dispatch(fetchUser(id)))
+        .value();
 
-  userIds.forEach( id => dispatch(fetchUser(id)));
-
-  console.log(userIds);
-
-  
 };
 
 
