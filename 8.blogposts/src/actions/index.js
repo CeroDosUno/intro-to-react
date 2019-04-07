@@ -1,6 +1,30 @@
 import jsonPlaceholder from '../apis/jsonPlaceholder';
 import _ from 'lodash';
 
+
+export const fetchPostsAndUsers = () => async (dispatch,getState) =>{
+  //memoization action creator
+  //call fetch post, returns action,
+  //dispatch that action
+  //wait to get response with await
+  // console.log('about to fetch');
+
+  await dispatch(fetchPosts());
+
+  // console.log(getState().posts);
+
+  //go through each post and pull userId
+  const userIds = _.uniq(_.map(getState().posts,'userId'));
+
+
+  userIds.forEach( id => dispatch(fetchUser(id)));
+
+  console.log(userIds);
+
+  
+};
+
+
 //DOTHIS
 //all this does is defining a function that returns a function
 export const fetchPosts = () =>   async (dispatch) => {
@@ -12,15 +36,11 @@ export const fetchPosts = () =>   async (dispatch) => {
     })
 };
 
-export const fetchUser = id => dispatch => _fetchUser(id,dispatch);
-//privatefunction
-const _fetchUser = _.memoize(async (id,dispatch) =>{
+export const fetchUser = (id) => async (dispatch) =>{
   const response = await jsonPlaceholder.get(`/users/${id}`);
 
   dispatch({
     type: 'FETCH_USER',
     payload: response.data
-  });
-});
-
-//
+  })
+};
