@@ -1,6 +1,7 @@
 import React from 'react';
 import {Field,reduxForm} from 'redux-form';
 import {createStream} from '../../actions';
+import {connect} from 'react-redux';
 
 class StreamCreate extends React.Component{
   renderError ({error,touched}){
@@ -35,9 +36,10 @@ class StreamCreate extends React.Component{
   //onsubmit is handled by redux form
   //no need for event to prevent default.
   //
-  onSubmit(formValues){
+  onSubmit = (formValues) => {
     // console.log(formValues);
     //handles preventdefault()
+    this.props.createStream(formValues);
   }
 
 
@@ -79,7 +81,12 @@ const validate = (formValues) =>{
 
 
 //pass in only 1 form
-export default reduxForm({
+const formWrapped = reduxForm({
   form:'simple',
   validate
 })(StreamCreate);
+
+
+export default connect(null, {
+  createStream
+})(formWrapped);
