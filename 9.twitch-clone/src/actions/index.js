@@ -63,7 +63,7 @@ export const deleteStream = (id) => async dispatch =>{
     await streams.delete(`/streams/${id}`);
 
     dispatch({
-      type: FETCH_STREAM,
+      type: DELETE_STREAM,
       payload: id
     });
 };
