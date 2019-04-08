@@ -2,7 +2,8 @@ import React from 'react';
 import {Field,reduxForm} from 'redux-form';
 
 class StreamCreate extends React.Component{
-  //passes in formProps. we took out input from formProps
+  //passes in formProps. we took out input
+  //and label from formProps
   renderInput({input, label}){
     return (
       <div className="field">
@@ -14,13 +15,22 @@ class StreamCreate extends React.Component{
     );
   }
 
+  //onsubmit is handled by redux form
+  //no need for event to prevent default.
+  //
+  onSubmit(formValues){
+    console.log(formValues);
+  }
+
 
   render(){
     console.log(this.props);
 
       return (
 
-        <form className="ui form">
+        <form
+        onSubmit={this.props.handleSubmit(this.onSubmit)}
+        className="ui form">
           <Field
             name="Title"
             component={this.renderInput}
@@ -31,7 +41,7 @@ class StreamCreate extends React.Component{
             component={this.renderInput}
             label="Description:"
           />
-
+          <button className="ui button primary" > Submit </button>
         </form>
 
       );
