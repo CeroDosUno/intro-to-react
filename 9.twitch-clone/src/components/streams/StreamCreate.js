@@ -3,14 +3,15 @@ import {Field,reduxForm} from 'redux-form';
 
 class StreamCreate extends React.Component{
   //passes in formProps. we took out input
-  //and label from formProps
-  renderInput({input, label}){
+  //meta and label from formProps
+  renderInput({input, label, meta}){
     return (
       <div className="field">
       <label> {label} </label>
       <input
         {...input}
       />
+      <div>{meta.error} </div>
       </div>
     );
   }
@@ -19,12 +20,12 @@ class StreamCreate extends React.Component{
   //no need for event to prevent default.
   //
   onSubmit(formValues){
-    console.log(formValues);
+    // console.log(formValues);
+    //handles preventdefault()
   }
 
 
   render(){
-    console.log(this.props);
 
       return (
 
@@ -32,14 +33,14 @@ class StreamCreate extends React.Component{
         onSubmit={this.props.handleSubmit(this.onSubmit)}
         className="ui form">
           <Field
-            name="Title"
+            name="title"
             component={this.renderInput}
             label="Enter Title:"
           />
           <Field
-            name="Description"
+            name="description"
             component={this.renderInput}
-            label="Description:"
+            label="Enter Description:"
           />
           <button className="ui button primary" > Submit </button>
         </form>
@@ -51,10 +52,10 @@ class StreamCreate extends React.Component{
 const validate = (formValues) =>{
   const errors = {};
   if(!formValues.title){
-    return errors.title = 'Please enter a title.';
+    errors.title = 'Please enter a title.';
   }
   if(!formValues.description){
-    return errors.title = 'Please enter a description.';
+    errors.description = 'Please enter a description.';
   }
 
   return errors;
@@ -62,4 +63,7 @@ const validate = (formValues) =>{
 
 
 //pass in only 1 form
-export default reduxForm({form:'simple'})(StreamCreate);
+export default reduxForm({
+  form:'simple',
+  validate
+})(StreamCreate);
