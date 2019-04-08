@@ -16,7 +16,10 @@ Users will be able to stream, login with 0auth, and make CRUD operations in reac
 * [React-redux](null) - integration layer
 * [redux-thunk](null) - middleware to help make requests in a redux applications
 * [Lodash](null)
-* [react-router-dom] (null)
+* [react-router-dom](null)
+* [jsonserver](null)
+* [redux-form](null)
+
 
 
 ## Authors
