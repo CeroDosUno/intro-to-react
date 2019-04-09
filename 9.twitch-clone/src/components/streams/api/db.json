@@ -1,26 +1,5 @@
 {
   "streams": [
-    {
-      "title": "book",
-      "description": "book reads",
-      "id": 1
-    },
-    {
-      "title": "book",
-      "description": "book reads",
-      "id": 2
-    },
-    {
-      "title": "newstream",
-      "description": "this is 3rd stream",
-      "userId": "113344273481746568710",
-      "id": 3
-    },
-    {
-      "title": "newstream",
-      "description": "this is 3rd stream",
-      "userId": "113344273481746568710",
-      "id": 4
-    }
+
   ]
 }

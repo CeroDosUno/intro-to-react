@@ -31,6 +31,9 @@ export const createStream = formValues => async (dispatch,getState) => {
     type: CREATE_STREAM,
     payload: response.data
   });
+
+  //// TODO:
+  //programmatic access to navigate user back to roo
 };
 
 export const fetchStreams = () => async dispatch =>{
