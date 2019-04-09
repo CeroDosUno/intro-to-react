@@ -3,6 +3,7 @@ import {Field,reduxForm} from 'redux-form';
 import {createStream} from '../../actions';
 import {connect} from 'react-redux';
 
+
 class StreamCreate extends React.Component{
   renderError ({error,touched}){
     if(touched && error){

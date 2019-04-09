@@ -1,4 +1,5 @@
 import streams from '../apis/streams';
+import history from '../history'
 
 import {
   SIGN_IN,
@@ -34,6 +35,7 @@ export const createStream = formValues => async (dispatch,getState) => {
 
   //// TODO:
   //programmatic access to navigate user back to roo
+  history.push('/');
 };
 
 export const fetchStreams = () => async dispatch =>{
