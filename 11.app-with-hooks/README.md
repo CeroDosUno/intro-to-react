@@ -1,9 +1,9 @@
-# Project 10 - Language translator
+# Project 11 - App with hooks
 
-This app is a simple language translator. It is meant to showcase the context system, and maybe some of the props system.
+This is an app that explores hooks. 
 
-![Design](https://github.com/CeroDosUno/intro-to-react/blob/master/10.languageapp/design.png)
-![Demo](https://github.com/CeroDosUno/intro-to-react/blob/master/10.languageapp/demo.gif)
+![Design](https://github.com/CeroDosUno/intro-to-react/blob/master/11.app-with-hooks/design.png)
+![Demo](https://github.com/CeroDosUno/intro-to-react/blob/master/11.app-with-hooks/demo.gif)
 
 ## Built With
 
