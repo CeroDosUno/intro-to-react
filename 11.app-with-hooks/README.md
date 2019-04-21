@@ -1,6 +1,6 @@
 # Project 11 - App with hooks
 
-This is an app that explores hooks. 
+This is an app that explores hooks.
 
 ![Design](https://github.com/CeroDosUno/intro-to-react/blob/master/11.app-with-hooks/design.png)
 ![Demo](https://github.com/CeroDosUno/intro-to-react/blob/master/11.app-with-hooks/demo.gif)
@@ -21,7 +21,7 @@ This is an app that explores hooks.
 * [node-media-server](null)
 * [OBS](null)
 * [flv.js](null)
-
+* [jsonplaceholder](https://jsonplaceholder.typicode.com)
 
 ## Authors
 
